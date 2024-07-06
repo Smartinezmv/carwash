@@ -1,11 +1,12 @@
+/* styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'Poppins', 'sans-serif';
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,5 +16,109 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  max-width: 1440px;
 }
 
+@layer components {
+  .title {
+    @apply font-bold text-title leading-titlelh;
+  }
+
+  .titlem {
+    @apply font-bold text-titlem;
+  }
+
+  .head1 {
+    @apply font-semibold text-h1 leading-h1lh;
+  }
+
+  .head1m {
+    @apply font-semibold text-h1m;
+  }
+
+  .head2 {
+    @apply font-semibold text-h2 leading-h2lh;
+  }
+
+  .head2m {
+    @apply font-semibold text-h2m;
+  }
+
+  .head3 {
+    @apply font-semibold text-h3 leading-h3lh;
+  }
+
+  .head3m {
+    @apply font-semibold text-h3m;
+  }
+
+  .head4 {
+    @apply font-semibold text-h4 leading-h4lh;
+  }
+
+  .head4m {
+    @apply font-semibold text-h4m;
+  }
+
+  .head5 {
+    @apply font-semibold text-h5 leading-h5lh;
+  }
+
+  .head5m {
+    @apply font-semibold text-h5;
+  }
+
+  .head6 {
+    @apply font-semibold text-h6 leading-h6lh;
+  }
+
+  .head6m {
+    @apply font-semibold text-h6m;
+  }
+
+  /* Custom button classes */
+  .btn-primary {
+    @apply text-base font-semibold bg-transparent border-2 border-white rounded-xl w-min px-6 py-1;
+  }
+
+  .btn-secondary {
+    @apply text-base font-semibold bg-transparent border-2 border-white rounded-xl w-min px-6 py-1;
+  }
+
+  /* Custom container classes */
+  .container {
+    @apply flex flex-col gap-8 py-9 p-20 max-660:p-0 max-660:py-6;
+  }
+
+  .stat-box {
+    @apply w-2/6 max-660:w-full;
+  }
+
+  .stat-number {
+    @apply text-5xl font-bold text-center;
+  }
+
+  .stat-title {
+    @apply text-2xl font-semibold text-center;
+  }
+
+
+  .benefit-box {
+    @apply w-2/5 max-660:w-full backdrop-blur-sm bg-black/80 rounded-3xl p-10 shadow-2xl flex flex-col justify-start gap-y-2;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8));
+  }
+  
+
+  .benefit-image {
+    @apply h-20 w-full object-cover rounded-3xl;
+  }
+
+  .benefit-title {
+    @apply font-bold text-xl text-left;
+  }
+
+  .benefit-description {
+    @apply text-base text-justify;
+  }
+}
