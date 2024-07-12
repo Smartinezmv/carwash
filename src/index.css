@@ -17,10 +17,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  max-width: 1440px;
+  max-width: 100vw;
 }
 
 @layer components {
+
+  .body-background {
+    background-image: linear-gradient(135deg, rgba(4,6,24,1) 0%, rgba(23, 29, 61, 1) 20%, rgba(66, 86, 136, 1) 80% , rgba(66, 86, 136, 1) 100%);
+  }
+
   .title {
     @apply font-bold text-title leading-titlelh;
   }
@@ -54,7 +59,7 @@
   }
 
   .head4 {
-    @apply font-semibold text-h4 leading-h4lh;
+    @apply font-normal text-h4 leading-h4lh;
   }
 
   .head4m {
@@ -83,42 +88,77 @@
   }
 
   .btn-secondary {
-    @apply text-base font-semibold bg-transparent border-2 border-white rounded-xl w-min px-6 py-1;
+    @apply text-lg font-bold bg-[#040618] border-0 rounded-2xl w-56 px-6 py-2;
   }
 
   /* Custom container classes */
   .container {
-    @apply flex flex-col gap-8 py-9 p-20 max-660:p-0 max-660:py-6;
+    @apply flex flex-col w-[55vw] gap-[20px] py-9 p-20 max-660:p-0 max-660:py-6 max-660:w-full;
+  }
+
+  .stat-container {
+    @apply backdrop-blur-sm bg-black/20 z-10 rounded-3xl py-[50px] w-[85vw] mx-auto;
+    background: linear-gradient(135deg,rgba(32, 39, 72, 0.4), rgba(4, 6, 24, 0.8));
   }
 
   .stat-box {
-    @apply w-2/6 max-660:w-full;
+    @apply w-2/6 max-660:w-full ;
   }
 
   .stat-number {
-    @apply text-5xl font-bold text-center;
+    @apply text-[60px] font-bold text-center;
   }
 
   .stat-title {
     @apply text-2xl font-semibold text-center;
   }
 
+  /* Tu código CSS existente */
+
+/* Tu código CSS existente */
+
+.section-bg-blend {
+  position: relative;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.87); /* Color de texto */
+  font-family: 'Poppins', sans-serif; /* Fuente */
+  text-align: center; /* Alineación del texto */
+  background-color: transparent;
+  z-index: 1; /* Ajusta el z-index según sea necesario */
+}
+
+.section-bg-blend::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('src/img/recursosHomePage/benefitsbg.png') no-repeat top center/cover;
+  mix-blend-mode: screen; /* Asegúrate de que mix-blend-mode esté configurado */
+  z-index: -1;
+  opacity: 0.2; /* Ajusta la opacidad según sea necesario */
+}
 
   .benefit-box {
-    @apply w-2/5 max-660:w-full backdrop-blur-sm bg-black/80 rounded-3xl p-10 shadow-2xl flex flex-col justify-start gap-y-2;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8));
+    @apply w-[40%] max-660:w-full backdrop-blur-sm bg-black/20 rounded-3xl p-10 shadow-2xl flex flex-col justify-start gap-y-[13px];
+    background: linear-gradient(135deg, rgba(4, 6, 24, 0.8) ,rgba(32, 39, 72, 0.4));
   }
   
 
   .benefit-image {
-    @apply h-20 w-full object-cover rounded-3xl;
+    @apply h-[130px] w-full object-cover rounded-3xl;
   }
 
   .benefit-title {
-    @apply font-bold text-xl text-left;
+    @apply font-semibold text-[30px] text-left;
+  }
+
+  .hr-benefits {
+    @apply w-[120px] h-[2px] border-0 bg-white
   }
 
   .benefit-description {
-    @apply text-base text-justify;
+    @apply text-[18px] text-justify font-normal;
   }
 }
